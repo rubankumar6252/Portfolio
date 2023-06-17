@@ -96,6 +96,14 @@ section {
     background-color: var(--black);
 }
 
+.menu-icon {
+    display: none;
+}
+
+.close-icon {
+    display: none;
+}
+
 .navbar.sticky {
     padding: 15px 0;
     background: blue;
@@ -407,6 +415,10 @@ section {
     width: 50%;
 }
 
+.skills .row .progress .bar-1-4 span {
+    width: 50%;
+}
+
 /* Education */
 .skills .education {
     flex: 0 0 50%;
@@ -513,10 +525,18 @@ section {
 
 .portfolio .box-container .box .content h3 {
     font-size: 2.5rem;
-    color: var(--black);
     text-transform: uppercase;
     transform: translateY(-5rem);
     opacity: 0;
+    transition-delay: .3s;
+    color: blue;
+}
+
+.portfolio .box-container .box .content #hdms {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    transform: translateY(-1rem);
+    text-align: center;
     transition-delay: .3s;
     color: blue;
 }
@@ -665,10 +685,6 @@ section {
     color: var(--blue);
 }
 
-
-
-
-
 /* media queries  */
 
 @media (max-width:768px) {
@@ -698,7 +714,7 @@ section {
 
 }
 
-@media (max-width:450px) {
+@media (max-width:576px) {
 
     html {
         font-size: 50%;
@@ -708,32 +724,96 @@ section {
         padding-left: 0;
     }
 
-    .header {
-        width: 100%;
+    /* Navbar */
+    .navbar {
+        width: 250px;
+        height: 640px;
+        display: none;
+        transition: display 0.3s ease;
+        text-align: center;
+    }
+
+    .menu-container {
+        position: fixed;
+        top: 0;
         left: 0;
-        border-right: 0;
+        width: 100%;
+        height: 45px;
+        background-color: var(--black);
+        z-index: 1;
     }
+
+    .menu-icon {
+        display: block;
+        position: fixed;
+        top: 1%;
+        left: 3%;
+        cursor: pointer;
+        color: white;
+    }
+
+    .close-icon {
+        display: none;
+        position: absolute;
+        top: 2%;
+        left: 4%;
+        cursor: pointer;
+        color: white;
+    }
+
+    .header .navbar .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 15%;
+    }
+
+    .header .navbar .menu li {
+        padding: 20px;
+    }
+
     .header .navbar .menu a {
-        font-size: 12px;
-        margin-left: 12px;
+        margin: 10px 40px;
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: 8px 35px;
+        box-sizing: border-box;
     }
-    
+
+    .header .navbar a:hover {
+        background-color: initial;
+        color: white;
+    }
+
+    .header .navbar .menu .active-link {
+        background-color: #7623f4;
+        color: white;
+    }
+
+    .menu-btn:target {
+        background-color: #7623f4;
+        color: white;
+    }
+
     /* Home */
     .home .content h3 {
         font-size: 30px;
     }
+
     .home ul {
         top: 70%;
     }
-    
+
     .home ul li a {
         width: 50px;
         height: 50px;
     }
-    
+
     .home ul li a .fab {
         line-height: calc(50px - 10px);
     }
+
 
     /* About */
     .about .himg img {
@@ -762,58 +842,68 @@ section {
 
     /* Skills */
     /* progress1 */
-    .skills .row .progress{
+    .skills .row .progress {
         position: absolute;
         left: 5px;
     }
-    .skills .row .progress .bar{
+
+    .skills .row .progress .bar {
         width: 345px;
         padding: .5rem;
     }
-    .skills .row .progress h3 span{
+
+    .skills .row .progress h3 span {
         width: 10%;
     }
+
     /* progress2 */
     .skills .row .col-lg-6 {
         position: absolute;
         margin-top: 53%;
         left: 0;
     }
-    .skills .col-lg-6 .progress{
+
+    .skills .col-lg-6 .progress {
         line-height: 18px;
     }
-    .skills .row .col-lg-6 .progress h3 .span{
+
+    .skills .row .col-lg-6 .progress h3 .span {
         width: 10%;
     }
-    .skills .row .col-lg-6 .progress .bar{
+
+    .skills .row .col-lg-6 .progress .bar {
         width: 345px;
         padding: .5rem;
     }
+
     /* Education */
-    .skills .row .education{
-        margin-top: 370px;
+    .skills .row .education {
+        margin-top: 410px;
     }
 
     /* Contact */
-    .contact .row{
+    .contact .row {
         position: absolute;
     }
-    .contact form{
+
+    .contact form {
         position: absolute;
         left: 20px;
         margin-top: 470px;
     }
+
     .contact .icona ul {
         position: absolute;
         top: 110%;
         margin-left: 35%;
     }
+
     /* credits */
     .credits {
         margin-top: 40rem;
     }
-    
+
     .credits span {
         color: var(--blue);
-    }   
+    }
 }
