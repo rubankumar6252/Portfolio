@@ -727,7 +727,7 @@ section {
     /* Navbar */
     .navbar {
         width: 250px;
-        height: auto;
+        height: 640px;
         display: none;
         transition: display 0.3s ease;
         text-align: center;
